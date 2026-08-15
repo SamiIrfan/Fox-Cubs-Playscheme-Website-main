@@ -8,78 +8,112 @@
    MOBILE NAVIGATION
 ========================================= */
 
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
+const hamburger =
+    document.getElementById("hamburger");
+
+const navLinks =
+    document.getElementById("navLinks");
+
 
 if (hamburger && navLinks) {
 
-    hamburger.addEventListener("click", () => {
+    hamburger.addEventListener(
+        "click",
+        () => {
 
-        const isOpen =
-            navLinks.classList.toggle("active");
-
-        hamburger.classList.toggle("active", isOpen);
-
-        hamburger.setAttribute(
-            "aria-expanded",
-            isOpen
-        );
-
-        hamburger.setAttribute(
-            "aria-label",
-            isOpen
-                ? "Close navigation menu"
-                : "Open navigation menu"
-        );
-    });
+            const isOpen =
+                navLinks.classList.toggle("active");
 
 
-    /* CLOSE MENU AFTER CLICKING A LINK */
+            hamburger.classList.toggle(
+                "active",
+                isOpen
+            );
+
+
+            hamburger.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+
+            hamburger.setAttribute(
+                "aria-label",
+                isOpen
+                    ? "Close navigation menu"
+                    : "Open navigation menu"
+            );
+
+        }
+    );
+
+
+    /*
+        Close menu after selecting a page section.
+    */
 
     navLinks
         .querySelectorAll("a")
         .forEach(link => {
 
-            link.addEventListener("click", () => {
+            link.addEventListener(
+                "click",
+                () => {
 
-                navLinks.classList.remove("active");
+                    navLinks.classList.remove(
+                        "active"
+                    );
 
-                hamburger.classList.remove("active");
+                    hamburger.classList.remove(
+                        "active"
+                    );
+
+                    hamburger.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    hamburger.setAttribute(
+                        "aria-label",
+                        "Open navigation menu"
+                    );
+
+                }
+            );
+
+        });
+
+
+    /*
+        Escape key closes mobile navigation.
+    */
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                event.key === "Escape" &&
+                navLinks.classList.contains("active")
+            ) {
+
+                navLinks.classList.remove(
+                    "active"
+                );
+
+                hamburger.classList.remove(
+                    "active"
+                );
 
                 hamburger.setAttribute(
                     "aria-expanded",
                     "false"
                 );
 
-                hamburger.setAttribute(
-                    "aria-label",
-                    "Open navigation menu"
-                );
-            });
+            }
 
-        });
-
-
-    /* CLOSE MENU WITH ESCAPE */
-
-    document.addEventListener("keydown", event => {
-
-        if (
-            event.key === "Escape" &&
-            navLinks.classList.contains("active")
-        ) {
-
-            navLinks.classList.remove("active");
-
-            hamburger.classList.remove("active");
-
-            hamburger.setAttribute(
-                "aria-expanded",
-                "false"
-            );
         }
-
-    });
+    );
 
 }
 
@@ -89,18 +123,25 @@ if (hamburger && navLinks) {
 ========================================= */
 
 const darkToggle =
-    document.getElementById("darkToggle");
+    document.getElementById(
+        "darkToggle"
+    );
 
 
 function updateDarkButton() {
 
     if (!darkToggle) return;
 
+
     const isDark =
-        document.body.classList.contains("dark");
+        document.body.classList.contains(
+            "dark"
+        );
+
 
     darkToggle.textContent =
         isDark ? "☀️" : "🌙";
+
 
     darkToggle.setAttribute(
         "aria-label",
@@ -109,31 +150,51 @@ function updateDarkButton() {
             : "Switch to dark mode"
     );
 
+
     darkToggle.setAttribute(
         "title",
         isDark
             ? "Switch to light mode"
             : "Switch to dark mode"
     );
+
 }
 
 
-/* LOAD SAVED THEME */
+/*
+    Load saved theme.
+*/
 
 const savedTheme =
-    localStorage.getItem("foxCubsTheme");
+    localStorage.getItem(
+        "foxCubsTheme"
+    );
 
 
 if (savedTheme === "dark") {
 
-    document.body.classList.add("dark");
+    document.body.classList.add(
+        "dark"
+    );
 
 }
 
 
-/* SYSTEM THEME */
+else if (savedTheme === "light") {
 
-if (!savedTheme) {
+    document.body.classList.remove(
+        "dark"
+    );
+
+}
+
+
+else {
+
+    /*
+        Respect the visitor's device theme
+        the first time they visit.
+    */
 
     const prefersDark =
         window.matchMedia &&
@@ -141,9 +202,12 @@ if (!savedTheme) {
             "(prefers-color-scheme: dark)"
         ).matches;
 
+
     if (prefersDark) {
 
-        document.body.classList.add("dark");
+        document.body.classList.add(
+            "dark"
+        );
 
     }
 
@@ -153,25 +217,35 @@ if (!savedTheme) {
 updateDarkButton();
 
 
-/* TOGGLE */
-
 if (darkToggle) {
 
-    darkToggle.addEventListener("click", () => {
+    darkToggle.addEventListener(
+        "click",
+        () => {
 
-        document.body.classList.toggle("dark");
+            document.body.classList.toggle(
+                "dark"
+            );
 
-        const isDark =
-            document.body.classList.contains("dark");
 
-        localStorage.setItem(
-            "foxCubsTheme",
-            isDark ? "dark" : "light"
-        );
+            const isDark =
+                document.body.classList.contains(
+                    "dark"
+                );
 
-        updateDarkButton();
 
-    });
+            localStorage.setItem(
+                "foxCubsTheme",
+                isDark
+                    ? "dark"
+                    : "light"
+            );
+
+
+            updateDarkButton();
+
+        }
+    );
 
 }
 
@@ -181,114 +255,125 @@ if (darkToggle) {
 ========================================= */
 
 const revealElements =
-    document.querySelectorAll(".reveal");
-
-
-const revealObserver =
-    new IntersectionObserver(
-        (entries, observer) => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("visible");
-
-                    observer.unobserve(
-                        entry.target
-                    );
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.12
-        }
+    document.querySelectorAll(
+        ".reveal"
     );
 
 
-revealElements.forEach(element => {
+if ("IntersectionObserver" in window) {
 
-    revealObserver.observe(element);
+    const revealObserver =
+        new IntersectionObserver(
+            (entries, observer) => {
 
-});
+                entries.forEach(
+                    entry => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
 
 
-/* =========================================
-   SMOOTH SCROLL
-========================================= */
+                            observer.unobserve(
+                                entry.target
+                            );
 
-document
-    .querySelectorAll('a[href^="#"]')
-    .forEach(anchor => {
+                        }
 
-        anchor.addEventListener("click", event => {
+                    }
+                );
 
-            const targetId =
-                anchor.getAttribute("href");
-
-            if (
-                !targetId ||
-                targetId === "#"
-            ) {
-                return;
+            },
+            {
+                threshold: 0.12
             }
+        );
 
 
-            const target =
-                document.querySelector(targetId);
+    revealElements.forEach(
+        element => {
 
-
-            if (!target) {
-                return;
-            }
-
-
-            event.preventDefault();
-
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        });
-
-    });
-
-
-/* =========================================
-   CONTACT FORM
-========================================= */
-
-const contactForm =
-    document.getElementById("contactForm");
-
-const formMessage =
-    document.getElementById("formMessage");
-
-
-if (contactForm) {
-
-    contactForm.addEventListener(
-        "submit",
-        event => {
-
-            event.preventDefault();
-
-
-            if (formMessage) {
-
-                formMessage.textContent =
-                    "Thank you! Your message has been prepared. Please connect this form to your preferred email service or backend before going live.";
-
-            }
-
-            contactForm.reset();
+            revealObserver.observe(
+                element
+            );
 
         }
     );
 
 }
+
+
+else {
+
+    revealElements.forEach(
+        element => {
+
+            element.classList.add(
+                "visible"
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   SMOOTH SECTION NAVIGATION
+========================================= */
+
+document
+    .querySelectorAll(
+        'a[href^="#"]'
+    )
+    .forEach(anchor => {
+
+        anchor.addEventListener(
+            "click",
+            event => {
+
+                const targetId =
+                    anchor.getAttribute(
+                        "href"
+                    );
+
+
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+
+                    return;
+
+                }
+
+
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
+
+
+                if (!target) {
+
+                    return;
+
+                }
+
+
+                event.preventDefault();
+
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+        );
+
+    });
