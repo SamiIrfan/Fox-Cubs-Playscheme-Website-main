@@ -1,1140 +1,798 @@
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="light">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta charset="UTF-8">
+  <title>Fox Cubs Playscheme CIC | Play, Learn & Thrive</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+  <meta
+    name="description"
+    content="Discover Fox Cubs Playscheme CIC, a welcoming playscheme helping combat holiday hunger and providing primary-aged children with a safe space to play, learn and develop social skills."
+  >
 
-    <meta
-        name="description"
-        content="Fox Cubs Playscheme CIC provides a warm, safe and welcoming space for primary-aged children to play, learn, enjoy food and develop social skills."
-    >
+  <meta name="theme-color" content="#f28c00">
 
-    <meta
-        name="referrer"
-        content="strict-origin-when-cross-origin"
-    >
+  <!-- Website icon and mobile home-screen icon -->
+  <link rel="icon" type="image/png" href="foxcubsplayscheme.png">
+  <link rel="apple-touch-icon" href="foxcubsplayscheme.png">
 
-    <meta
-        name="theme-color"
-        content="#174936"
-    >
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 
-    <title>
-        Fox Cubs Playscheme CIC | Play, Learn & Grow
-    </title>
+  <!-- Apply saved theme early to reduce flashing -->
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("foxcubs-theme");
+      if (savedTheme === "light" || savedTheme === "dark") {
+        document.documentElement.dataset.theme = savedTheme;
+      } else if (
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    } catch (error) {
+      // The website still works if browser storage is unavailable.
+    }
+  </script>
 
-    <link
-        rel="stylesheet"
-        href="styles.css"
-    >
-
+  <script src="script.js" defer></script>
 </head>
-
 
 <body>
 
+  <!-- Accessibility: skip navigation -->
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <!-- =================================
-         NAVIGATION
-    ================================== -->
+  <!-- ================================
+       HEADER & NAVIGATION
+  ================================= -->
 
-    <header class="navbar">
+  <header class="site-header">
+    <div class="container header-inner">
 
-        <a
-            href="#home"
-            class="logo-container"
-            aria-label="Fox Cubs Playscheme CIC home"
+      <a class="brand" href="#home" aria-label="Fox Cubs Playscheme home">
+        <img
+          class="brand-logo"
+          src="foxcubsplayscheme.png"
+          alt="Fox Cubs Playscheme CIC logo"
+          width="76"
+          height="76"
         >
+
+        <span class="brand-text">
+          <strong>FOX CUBS</strong>
+          <span>PLAYSCHEME CIC</span>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav
+        class="primary-navigation"
+        id="primary-navigation"
+        aria-label="Main navigation"
+      >
+        <a href="#home">Home</a>
+        <a href="#about">About us</a>
+        <a href="#holiday-hunger">Holiday hunger</a>
+        <a href="#certificate">Our commitment</a>
+        <a href="#support">Support us</a>
+        <a href="#contact" class="nav-contact">Contact us</a>
+      </nav>
+
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        type="button"
+        aria-label="Switch to dark mode"
+        aria-pressed="false"
+      >
+        <span class="theme-icon" aria-hidden="true">☾</span>
+        <span class="theme-label">Dark mode</span>
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ================================
+         HERO
+    ================================= -->
+
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="hero-content reveal">
+
+          <span class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            PLAY • LEARN • THRIVE
+          </span>
+
+          <h1>
+            Big smiles.
+            <span>Brighter futures.</span>
+          </h1>
+
+          <p class="hero-description">
+            Welcome to Fox Cubs Playscheme CIC — a warm, safe and
+            welcoming space where primary-aged children can enjoy
+            play, learn new things, build friendships and develop
+            essential social skills.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#about">
+              Discover Fox Cubs
+              <span aria-hidden="true">→</span>
+            </a>
+
+            <a class="button button-secondary" href="#support">
+              Support our mission
+            </a>
+          </div>
+
+          <div class="hero-values">
+            <div class="hero-value">
+              <span class="value-icon" aria-hidden="true">♡</span>
+              <span>Care and kindness</span>
+            </div>
+
+            <div class="hero-value">
+              <span class="value-icon" aria-hidden="true">✦</span>
+              <span>Play and learning</span>
+            </div>
+
+            <div class="hero-value">
+              <span class="value-icon" aria-hidden="true">◎</span>
+              <span>Friendship and inclusion</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-image-card">
+
+            <div class="hero-image-background"></div>
 
             <img
-                src="foxcubsplayscheme.png"
-                alt="Fox Cubs Playscheme CIC logo"
-                class="logo-img"
+              src="foxcubsplayscheme.png"
+              alt="The friendly Fox Cubs Playscheme fox logo"
+              class="hero-logo"
+              width="420"
+              height="420"
             >
 
-            <span class="logo-text">
-                Fox Cubs
-            </span>
+            <div class="floating-note floating-note-top">
+              <span class="floating-note-icon" aria-hidden="true">☀</span>
+              <span>
+                <strong>A place to belong</strong>
+                <small>Everyone is welcome</small>
+              </span>
+            </div>
 
+            <div class="floating-note floating-note-bottom">
+              <span class="floating-note-icon" aria-hidden="true">♡</span>
+              <span>
+                <strong>Growing together</strong>
+                <small>One smile at a time</small>
+              </span>
+            </div>
+
+            <span class="decorative-star star-one" aria-hidden="true">✦</span>
+            <span class="decorative-star star-two" aria-hidden="true">✧</span>
+            <span class="decorative-star star-three" aria-hidden="true">✦</span>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero-bottom-shape" aria-hidden="true"></div>
+    </section>
+
+    <!-- ================================
+         INTRODUCTION STRIP
+    ================================= -->
+
+    <section class="welcome-strip">
+      <div class="container welcome-strip-inner">
+
+        <div class="welcome-icon" aria-hidden="true">☀</div>
+
+        <p>
+          <strong>Every child deserves the chance to thrive.</strong>
+          We help create opportunities for children to play, connect
+          and enjoy their time away from school.
+        </p>
+
+        <a href="#about" class="text-link">
+          Get to know us <span aria-hidden="true">→</span>
         </a>
 
+      </div>
+    </section>
 
-        <div class="nav-controls">
+    <!-- ================================
+         ABOUT US
+    ================================= -->
 
-            <button
-                id="darkToggle"
-                class="dark-btn"
-                type="button"
-                aria-label="Switch to dark mode"
-                title="Toggle dark mode"
-            >
-                🌙
-            </button>
+    <section class="section section-about" id="about">
+      <div class="container">
 
+        <div class="section-heading reveal">
+          <span class="section-kicker">WHO WE ARE</span>
 
-            <button
-                id="hamburger"
-                class="hamburger"
-                type="button"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-                aria-controls="navLinks"
-            >
+          <h2>
+            A little place with
+            <span>a big heart.</span>
+          </h2>
 
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </button>
-
+          <p>
+            At Fox Cubs Playscheme CIC, we believe children flourish
+            when they feel safe, supported, included and free to be
+            themselves.
+          </p>
         </div>
 
+        <div class="about-grid">
 
-        <nav
-            class="nav-links"
-            id="navLinks"
-            aria-label="Main navigation"
-        >
-
-            <a href="#home">
-                Home
-            </a>
-
-            <a href="#about">
-                About Us
-            </a>
-
-            <a href="#activities">
-                What We Do
-            </a>
-
-            <a href="#holiday-hunger">
-                Holiday Hunger
-            </a>
-
-            <a href="#support">
-                Get Involved
-            </a>
-
-            <a href="#contact">
-                Contact Us
-            </a>
-
-        </nav>
-
-    </header>
-
-
-
-    <main>
-
-
-        <!-- =================================
-             HERO
-        ================================== -->
-
-        <section
-            class="hero"
-            id="home"
-        >
-
-            <div class="hero-content reveal">
-
-                <span class="hero-label">
-                    Fox Cubs Playscheme CIC
-                </span>
-
-
-                <h1>
-
-                    A warm, safe space for children to
-
-                    <span>
-                        play, learn & grow.
-                    </span>
-
-                </h1>
-
-
-                <p>
-
-                    We help combat holiday hunger while
-                    providing primary-aged children with
-                    opportunities to play, learn, make
-                    friends and develop important social
-                    skills.
-
-                </p>
-
-
-                <div class="hero-buttons">
-
-                    <a
-                        href="#about"
-                        class="btn btn-primary"
-                    >
-                        Discover Fox Cubs
-                    </a>
-
-
-                    <a
-                        href="#support"
-                        class="btn btn-outline"
-                    >
-                        Get Involved
-                    </a>
-
-                </div>
-
+          <article class="about-card reveal">
+            <div class="card-icon card-icon-orange" aria-hidden="true">
+              <span>♡</span>
             </div>
 
-        </section>
-
-
-
-        <!-- =================================
-             ABOUT US
-        ================================== -->
-
-        <section
-            id="about"
-            class="section"
-        >
-
-            <div class="container">
-
-
-                <div class="section-heading reveal">
-
-                    <span class="eyebrow">
-                        Who We Are
-                    </span>
-
-
-                    <h2>
-                        Helping children enjoy
-                        brighter holidays.
-                    </h2>
-
-
-                    <p>
-
-                        Fox Cubs Playscheme CIC is a
-                        community-focused playscheme
-                        providing primary-aged children
-                        with a welcoming environment where
-                        they can feel safe, supported and
-                        included.
-
-                    </p>
-
-                </div>
-
-
-
-                <div class="about-grid">
-
-
-                    <div class="about-text reveal">
-
-                        <h3>
-                            More than just a playscheme
-                        </h3>
-
-
-                        <p>
-
-                            We believe every child deserves
-                            the opportunity to enjoy their
-                            holidays, regardless of their
-                            circumstances.
-
-                        </p>
-
-
-                        <p>
-
-                            Our sessions bring together
-                            food, play, learning and social
-                            activities to create positive
-                            experiences for children and
-                            families within our community.
-
-                        </p>
-
-
-                        <a
-                            href="#activities"
-                            class="text-link"
-                        >
-                            Discover what we do →
-                        </a>
-
-                    </div>
-
-
-
-                    <div class="about-highlight reveal">
-
-                        <div class="highlight-icon">
-                            🦊
-                        </div>
-
-
-                        <h3>
-                            Our Purpose
-                        </h3>
-
-
-                        <p>
-
-                            To show people who we are at
-                            Fox Cubs Playscheme CIC, while
-                            helping to combat holiday hunger
-                            and providing a warm, safe space
-                            for primary-aged children to
-                            enjoy play and learning.
-
-                        </p>
-
-
-                        <p>
-
-                            We encourage children to build
-                            friendships, confidence and
-                            positive social skills in a
-                            supportive environment.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================
-             HOLIDAY HUNGER
-        ================================== -->
-
-        <section
-            id="holiday-hunger"
-            class="section holiday-section"
-        >
-
-            <div class="container">
-
-
-                <div class="holiday-grid">
-
-
-                    <div class="holiday-content reveal">
-
-                        <span class="eyebrow">
-                            Tackling Holiday Hunger
-                        </span>
-
-
-                        <h2>
-
-                            Helping children enjoy
-                            happier, healthier holidays.
-
-                        </h2>
-
-
-                        <p>
-
-                            School holidays can be a
-                            challenging time for families.
-                            Fox Cubs Playscheme CIC aims to
-                            help by providing children with
-                            food, activities and a safe,
-                            welcoming place to spend time.
-
-                        </p>
-
-
-                        <p>
-
-                            We believe that children should
-                            be able to enjoy their holidays,
-                            have fun with friends and take
-                            part in positive activities
-                            without feeling excluded.
-
-                        </p>
-
-
-                        <a
-                            href="#support"
-                            class="btn btn-primary"
-                        >
-                            Support Our Work
-                        </a>
-
-                    </div>
-
-
-
-                    <div class="holiday-cards reveal">
-
-
-                        <div class="mini-card">
-
-                            <span>
-                                🍽️
-                            </span>
-
-                            <div>
-
-                                <h3>
-                                    Food & Support
-                                </h3>
-
-                                <p>
-                                    Helping children access
-                                    food during school holidays.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="mini-card">
-
-                            <span>
-                                🏠
-                            </span>
-
-                            <div>
-
-                                <h3>
-                                    A Safe Space
-                                </h3>
-
-                                <p>
-                                    A warm and welcoming
-                                    environment where children
-                                    can feel comfortable.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="mini-card">
-
-                            <span>
-                                ❤️
-                            </span>
-
-                            <div>
-
-                                <h3>
-                                    Community
-                                </h3>
-
-                                <p>
-                                    Bringing children and
-                                    families together through
-                                    positive experiences.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================
-             WHAT WE DO
-        ================================== -->
-
-        <section
-            id="activities"
-            class="section"
-        >
-
-            <div class="container">
-
-
-                <div class="section-heading reveal">
-
-                    <span class="eyebrow">
-                        What We Do
-                    </span>
-
-
-                    <h2>
-                        Play, learn, connect.
-                    </h2>
-
-
-                    <p>
-
-                        Our activities are designed to
-                        give children opportunities to
-                        have fun while developing
-                        confidence, creativity and
-                        social skills.
-
-                    </p>
-
-                </div>
-
-
-
-                <div class="cards">
-
-
-                    <article class="card reveal">
-
-                        <div class="card-icon">
-                            🎨
-                        </div>
-
-
-                        <h3>
-                            Play & Creativity
-                        </h3>
-
-
-                        <p>
-
-                            Creative activities, games and
-                            imaginative play that encourage
-                            children to express themselves
-                            and have fun.
-
-                        </p>
-
-                    </article>
-
-
-
-                    <article class="card reveal">
-
-                        <div class="card-icon">
-                            📚
-                        </div>
-
-
-                        <h3>
-                            Learning
-                        </h3>
-
-
-                        <p>
-
-                            Activities that encourage
-                            curiosity, learning and the
-                            development of new skills in an
-                            enjoyable environment.
-
-                        </p>
-
-                    </article>
-
-
-
-                    <article class="card reveal">
-
-                        <div class="card-icon">
-                            🤝
-                        </div>
-
-
-                        <h3>
-                            Social Skills
-                        </h3>
-
-
-                        <p>
-
-                            Helping children develop
-                            friendships, communication,
-                            confidence and teamwork.
-
-                        </p>
-
-                    </article>
-
-
-
-                    <article class="card reveal">
-
-                        <div class="card-icon">
-                            ⚽
-                        </div>
-
-
-                        <h3>
-                            Active Play
-                        </h3>
-
-
-                        <p>
-
-                            Fun activities that encourage
-                            children to stay active, work
-                            together and enjoy being part
-                            of a group.
-
-                        </p>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================
-             GET INVOLVED
-        ================================== -->
-
-        <section
-            id="support"
-            class="section support-section"
-        >
-
-            <div class="container">
-
-
-                <div class="section-heading reveal">
-
-                    <span class="eyebrow">
-                        Get Involved
-                    </span>
-
-
-                    <h2>
-                        Help us make a difference.
-                    </h2>
-
-
-                    <p>
-
-                        Fox Cubs is strengthened by the
-                        support of people, organisations
-                        and members of our community who
-                        believe children deserve positive,
-                        safe and enjoyable experiences.
-
-                    </p>
-
-                </div>
-
-
-
-                <div class="support-grid">
-
-
-                    <div class="support-card reveal">
-
-                        <div class="support-icon">
-                            🤝
-                        </div>
-
-
-                        <h3>
-                            Volunteer With Us
-                        </h3>
-
-
-                        <p>
-
-                            Give your time, skills and
-                            enthusiasm to help create
-                            positive experiences for
-                            children during our
-                            playscheme sessions.
-
-                        </p>
-
-
-                        <a
-                            href="#contact"
-                            class="support-link"
-                        >
-                            Ask About Volunteering →
-                        </a>
-
-                    </div>
-
-
-
-                    <div class="support-card reveal">
-
-                        <div class="support-icon">
-                            ❤️
-                        </div>
-
-
-                        <h3>
-                            Support Our Work
-                        </h3>
-
-
-                        <p>
-
-                            There are many ways to support
-                            Fox Cubs, including volunteering,
-                            fundraising, partnerships or
-                            simply helping us spread the
-                            word.
-
-                        </p>
-
-
-                        <a
-                            href="#contact"
-                            class="support-link"
-                        >
-                            Find Out How You Can Help →
-                        </a>
-
-                    </div>
-
-
-
-                    <div class="support-card reveal">
-
-                        <div class="support-icon">
-                            🌱
-                        </div>
-
-
-                        <h3>
-                            Work With Us
-                        </h3>
-
-
-                        <p>
-
-                            We welcome opportunities to work
-                            with local organisations,
-                            businesses and community groups
-                            that share our values.
-
-                        </p>
-
-
-                        <a
-                            href="#contact"
-                            class="support-link"
-                        >
-                            Become a Partner →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================
-             CALL TO ACTION
-        ================================== -->
-
-        <section class="cta">
-
-            <div class="container reveal">
-
-                <span class="eyebrow">
-                    Together We Can Help
-                </span>
-
-
-                <h2>
-                    Let's make holidays
-                    brighter for children.
-                </h2>
-
-
-                <p>
-
-                    Whether you would like to volunteer,
-                    support our work, work with us or
-                    simply find out more about Fox Cubs,
-                    we would love to hear from you.
-
-                </p>
-
-
-                <a
-                    href="#contact"
-                    class="btn btn-white"
-                >
-                    Contact Fox Cubs
-                </a>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================
-             PROFESSIONAL CONTACT SECTION
-        ================================== -->
-
-        <section
-            id="contact"
-            class="section contact-section"
-        >
-
-            <div class="container">
-
-
-                <div class="section-heading reveal">
-
-                    <span class="eyebrow">
-                        Contact Fox Cubs
-                    </span>
-
-
-                    <h2>
-                        We'd love to hear from you.
-                    </h2>
-
-
-                    <p>
-
-                        If you would like to find out more
-                        about Fox Cubs Playscheme CIC,
-                        discuss volunteering, explore
-                        partnership opportunities or ask
-                        us a question, please get in touch.
-
-                    </p>
-
-                </div>
-
-
-
-                <div class="contact-layout">
-
-
-                    <!-- CONTACT INFORMATION -->
-
-                    <div class="contact-information reveal">
-
-                        <span class="contact-small-title">
-                            Get in touch
-                        </span>
-
-
-                        <h3>
-                            Let's start a conversation.
-                        </h3>
-
-
-                        <p>
-
-                            Whether you're a parent or carer,
-                            a potential volunteer, a local
-                            organisation or simply someone
-                            who would like to learn more
-                            about what we do, we're always
-                            happy to hear from you.
-
-                        </p>
-
-
-                        <p>
-
-                            For enquiries, please contact
-                            Fox Cubs Playscheme CIC using
-                            the email address below.
-
-                        </p>
-
-
-                        <a
-                            href="mailto:sharon.shazbags@googlemail.com"
-                            class="email-address"
-                        >
-                            <span class="email-icon">
-                                ✉️
-                            </span>
-
-                            <span>
-                                sharon.shazbags@googlemail.com
-                            </span>
-
-                        </a>
-
-
-                        <a
-                            href="mailto:sharon.shazbags@googlemail.com"
-                            class="btn btn-primary email-button"
-                        >
-                            Email Fox Cubs
-                        </a>
-
-                    </div>
-
-
-
-                    <!-- CONTACT TOPICS -->
-
-                    <div class="contact-topics reveal">
-
-
-                        <h3>
-                            How can we help?
-                        </h3>
-
-
-                        <div class="contact-topic">
-
-                            <span>
-                                👨‍👩‍👧
-                            </span>
-
-                            <div>
-
-                                <h4>
-                                    Parents & Carers
-                                </h4>
-
-                                <p>
-                                    Questions about our
-                                    playscheme or activities.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="contact-topic">
-
-                            <span>
-                                🤝
-                            </span>
-
-                            <div>
-
-                                <h4>
-                                    Volunteers
-                                </h4>
-
-                                <p>
-                                    Interested in helping
-                                    Fox Cubs make a difference?
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="contact-topic">
-
-                            <span>
-                                🏢
-                            </span>
-
-                            <div>
-
-                                <h4>
-                                    Organisations
-                                </h4>
-
-                                <p>
-                                    Interested in partnering
-                                    or working with us?
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="contact-topic">
-
-                            <span>
-                                💚
-                            </span>
-
-                            <div>
-
-                                <h4>
-                                    General Enquiries
-                                </h4>
-
-                                <p>
-                                    Anything else you'd like
-                                    to ask? Get in touch.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- =================================
-         FOOTER
-    ================================== -->
-
-    <footer>
-
-        <div class="footer-container">
-
-
-            <div class="footer-brand">
-
-                <div class="footer-logo">
-
-                    <img
-                        src="foxcubsplayscheme.png"
-                        alt="Fox Cubs Playscheme CIC logo"
-                    >
-
-
-                    <span>
-                        Fox Cubs Playscheme CIC
-                    </span>
-
-                </div>
-
-
-                <p>
-
-                    Providing a warm, safe and welcoming
-                    space where primary-aged children can
-                    play, learn, build friendships and grow.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="footer-links">
-
-                <h3>
-                    Quick Links
-                </h3>
-
-
-                <a href="#about">
-                    About Us
-                </a>
-
-
-                <a href="#activities">
-                    What We Do
-                </a>
-
-
-                <a href="#holiday-hunger">
-                    Holiday Hunger
-                </a>
-
-
-                <a href="#support">
-                    Get Involved
-                </a>
-
-
-                <a href="#contact">
-                    Contact Us
-                </a>
-
-            </div>
-
-
-
-            <div class="footer-social">
-
-                <h3>
-                    Follow Fox Cubs
-                </h3>
-
-
-                <a
-                    href="https://www.facebook.com/people/Fox-Cubs-Playscheme/100077673514242/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Facebook
-                </a>
-
-
-                <a
-                    href="mailto:sharon.shazbags@googlemail.com"
-                >
-                    Email Us
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="footer-bottom">
+            <h3>A warm, safe space</h3>
 
             <p>
-                © 2026 Fox Cubs Playscheme CIC.
-                All rights reserved.
+              We aim to provide a welcoming environment where
+              primary-aged children can feel comfortable, valued
+              and supported.
             </p>
+          </article>
+
+          <article class="about-card reveal">
+            <div class="card-icon card-icon-green" aria-hidden="true">
+              <span>✦</span>
+            </div>
+
+            <h3>Play and discovery</h3>
+
+            <p>
+              Play gives children opportunities to be curious,
+              express themselves, discover new interests and
+              enjoy positive experiences.
+            </p>
+          </article>
+
+          <article class="about-card reveal">
+            <div class="card-icon card-icon-blue" aria-hidden="true">
+              <span>◎</span>
+            </div>
+
+            <h3>Friendships and social skills</h3>
+
+            <p>
+              We encourage sharing, communication, teamwork,
+              kindness and confidence through activities and
+              positive interactions.
+            </p>
+          </article>
 
         </div>
 
-    </footer>
+        <div class="about-highlight reveal">
 
+          <div class="about-highlight-icon" aria-hidden="true">🌱</div>
 
+          <div>
+            <span class="section-kicker">OUR PURPOSE</span>
 
-    <script src="script.js"></script>
+            <h3>Helping children feel included, nourished and inspired.</h3>
+
+            <p>
+              We want children to have opportunities to enjoy their
+              holidays, build meaningful connections and learn
+              through play in a caring environment.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================
+         HOLIDAY HUNGER
+    ================================= -->
+
+    <section class="section holiday-section" id="holiday-hunger">
+      <div class="container holiday-grid">
+
+        <div class="holiday-visual reveal">
+          <div class="holiday-art">
+
+            <div class="holiday-art-circle circle-one"></div>
+            <div class="holiday-art-circle circle-two"></div>
+
+            <div class="lunch-illustration" aria-hidden="true">
+              <span class="lunch-sun">☀</span>
+              <span class="lunch-plate">🥗</span>
+              <span class="lunch-heart">♡</span>
+            </div>
+
+            <div class="holiday-art-caption">
+              <span aria-hidden="true">♡</span>
+              Nourishment, care and connection
+            </div>
+
+          </div>
+        </div>
+
+        <div class="holiday-content reveal">
+
+          <span class="section-kicker">WHY OUR WORK MATTERS</span>
+
+          <h2>
+            Helping tackle
+            <span>holiday hunger.</span>
+          </h2>
+
+          <p>
+            School holidays can be challenging for families who
+            rely on the support and routines that school provides.
+            Holiday hunger is the difficulty some children face
+            accessing enough nutritious food during these periods.
+          </p>
+
+          <p>
+            Fox Cubs Playscheme CIC aims to help address this
+            challenge by supporting access to food alongside
+            opportunities for play, learning and positive social
+            experiences.
+          </p>
+
+          <div class="holiday-points">
+
+            <div class="holiday-point">
+              <span class="point-check" aria-hidden="true">✓</span>
+              <div>
+                <h3>Supporting children's wellbeing</h3>
+                <p>
+                  Recognising the importance of food, care and
+                  positive experiences during the holidays.
+                </p>
+              </div>
+            </div>
+
+            <div class="holiday-point">
+              <span class="point-check" aria-hidden="true">✓</span>
+              <div>
+                <h3>Making holidays more enjoyable</h3>
+                <p>
+                  Creating opportunities for children to play,
+                  explore and connect with others.
+                </p>
+              </div>
+            </div>
+
+            <div class="holiday-point">
+              <span class="point-check" aria-hidden="true">✓</span>
+              <div>
+                <h3>Encouraging inclusion</h3>
+                <p>
+                  Helping children feel welcome, valued and part
+                  of a community.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <a class="button button-primary" href="#support">
+            Help support our work
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================
+         PLAY, LEARN & GROW
+    ================================= -->
+
+    <section class="section activities-section" id="activities">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-kicker">GROWING THROUGH PLAY</span>
+
+          <h2>
+            More than just
+            <span>something to do.</span>
+          </h2>
+
+          <p>
+            Positive play experiences can help children develop
+            skills and confidence that stay with them as they grow.
+          </p>
+        </div>
+
+        <div class="activities-grid">
+
+          <article class="activity-card activity-orange reveal">
+            <span class="activity-number">01</span>
+            <span class="activity-emoji" aria-hidden="true">🎨</span>
+            <h3>Creativity</h3>
+            <p>
+              Exploring ideas, expressing individuality and
+              discovering the joy of making things.
+            </p>
+          </article>
+
+          <article class="activity-card activity-green reveal">
+            <span class="activity-number">02</span>
+            <span class="activity-emoji" aria-hidden="true">🤝</span>
+            <h3>Social skills</h3>
+            <p>
+              Practising communication, cooperation, sharing
+              and respectful relationships.
+            </p>
+          </article>
+
+          <article class="activity-card activity-blue reveal">
+            <span class="activity-number">03</span>
+            <span class="activity-emoji" aria-hidden="true">🧩</span>
+            <h3>Learning through play</h3>
+            <p>
+              Building curiosity, problem-solving skills
+              and confidence in trying new things.
+            </p>
+          </article>
+
+          <article class="activity-card activity-pink reveal">
+            <span class="activity-number">04</span>
+            <span class="activity-emoji" aria-hidden="true">🌈</span>
+            <h3>Belonging</h3>
+            <p>
+              Encouraging kindness, inclusion and friendships
+              in a positive, welcoming environment.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+         CERTIFICATE
+    ================================= -->
+
+    <section class="section certificate-section" id="certificate">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-kicker">OUR COMMITMENT</span>
+
+          <h2>
+            Qualifications
+            <span>&amp; training.</span>
+          </h2>
+
+          <p>
+            We value the knowledge, training and commitment that
+            help support children's wellbeing, safety and development.
+            View Sharon's certificate below.
+          </p>
+        </div>
+
+        <article class="certificate-card reveal">
+
+          <div class="certificate-header">
+
+            <div class="certificate-heading">
+              <span class="certificate-icon" aria-hidden="true">🏅</span>
+
+              <div>
+                <h3>Sharon's Certificate</h3>
+                <p>Training and professional development</p>
+              </div>
+            </div>
+
+            <span class="certificate-badge">
+              Certificate
+            </span>
+
+          </div>
+
+          <div class="certificate-viewer">
+
+            <object
+              data="Sharon's Certificate.pdf"
+              type="application/pdf"
+              class="certificate-pdf"
+              aria-label="Sharon's certificate displayed directly on this page"
+            >
+              <div class="certificate-fallback">
+                <p>
+                  Your browser cannot display this PDF directly.
+                </p>
+
+                <a
+                  href="Sharon's Certificate.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Sharon's certificate
+                </a>
+              </div>
+            </object>
+
+          </div>
+
+          <div class="certificate-footer">
+            <p>
+              We are committed to creating a positive environment
+              where children can play, learn and thrive.
+            </p>
+          </div>
+
+        </article>
+
+        <p class="certificate-note">
+          Please ensure you have permission to publish any personal
+          information shown on the certificate.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ================================
+         SUPPORT US
+    ================================= -->
+
+    <section class="section support-section" id="support">
+      <div class="container">
+
+        <div class="support-panel reveal">
+
+          <div class="support-content">
+            <span class="section-kicker">MAKE A DIFFERENCE</span>
+
+            <h2>
+              Help us create
+              <span>brighter holidays.</span>
+            </h2>
+
+            <p>
+              A strong community helps children thrive. If you
+              would like to support the work of Fox Cubs Playscheme
+              CIC, we would love to hear from you.
+            </p>
+
+            <p>
+              Whether you are interested in volunteering, exploring
+              partnership opportunities or offering support, please
+              get in touch to discuss how you might be able to help.
+            </p>
+
+            <a class="button button-light" href="#contact">
+              Get in touch
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <div class="support-decoration" aria-hidden="true">
+            <div class="support-circle">
+              <span class="support-heart">♡</span>
+              <span class="support-spark spark-a">✦</span>
+              <span class="support-spark spark-b">✧</span>
+              <span class="support-spark spark-c">✦</span>
+            </div>
+            <div class="support-caption">
+              Small acts. Meaningful impact.
+            </div>
+          </div>
+
+        </div>
+
+        <div class="support-options">
+
+          <article class="support-option reveal">
+            <span class="support-option-icon" aria-hidden="true">🙌</span>
+            <h3>Volunteer</h3>
+            <p>
+              Ask us about volunteering opportunities and ways
+              to contribute to our playscheme.
+            </p>
+            <a href="#contact" class="text-link">
+              Enquire about volunteering →
+            </a>
+          </article>
+
+          <article class="support-option reveal">
+            <span class="support-option-icon" aria-hidden="true">🤝</span>
+            <h3>Partner with us</h3>
+            <p>
+              Explore opportunities to work together to support
+              children and families.
+            </p>
+            <a href="#contact" class="text-link">
+              Discuss a partnership →
+            </a>
+          </article>
+
+          <article class="support-option reveal">
+            <span class="support-option-icon" aria-hidden="true">💛</span>
+            <h3>Spread the word</h3>
+            <p>
+              Help more people learn about our purpose and
+              the work we aim to do.
+            </p>
+            <a href="#contact" class="text-link">
+              Get in touch →
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================
+         CONTACT
+    ================================= -->
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+
+        <div class="contact-content reveal">
+
+          <span class="section-kicker">LET'S TALK</span>
+
+          <h2>
+            We'd love to
+            <span>hear from you.</span>
+          </h2>
+
+          <p>
+            Do you have a question about Fox Cubs Playscheme CIC?
+            Would you like to learn more about our work, volunteering
+            or potential ways to support us?
+          </p>
+
+          <p>
+            Please email Sharon and we will be happy to hear from you.
+          </p>
+
+          <a
+            class="contact-email"
+            href="mailto:sharon.shazbags@googlemail.com"
+          >
+            <span class="contact-email-icon" aria-hidden="true">✉</span>
+
+            <span>
+              <small>Email us</small>
+              <strong>sharon.shazbags@googlemail.com</strong>
+            </span>
+
+            <span class="email-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <p class="contact-note">
+            For enquiries about the playscheme, volunteering
+            and potential partnerships.
+          </p>
+
+        </div>
+
+        <div class="contact-visual reveal">
+          <div class="contact-illustration">
+
+            <div class="contact-sun" aria-hidden="true">☀</div>
+
+            <img
+              src="foxcubsplayscheme.png"
+              alt=""
+              class="contact-logo"
+              width="240"
+              height="240"
+              loading="lazy"
+            >
+
+            <div class="contact-message">
+              <span aria-hidden="true">♡</span>
+              Every child matters.
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================
+       FOOTER
+  ================================= -->
+
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div class="footer-brand">
+          <a class="brand footer-brand-link" href="#home">
+            <img
+              src="foxcubsplayscheme.png"
+              alt=""
+              class="brand-logo"
+              width="64"
+              height="64"
+              loading="lazy"
+            >
+
+            <span class="brand-text">
+              <strong>FOX CUBS</strong>
+              <span>PLAYSCHEME CIC</span>
+            </span>
+          </a>
+
+          <p>
+            Helping primary-aged children enjoy play, learning,
+            friendship and positive experiences during the holidays.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h2>Explore</h2>
+          <a href="#about">About us</a>
+          <a href="#holiday-hunger">Holiday hunger</a>
+          <a href="#certificate">Our commitment</a>
+          <a href="#support">Support us</a>
+        </div>
+
+        <div class="footer-links">
+          <h2>Get in touch</h2>
+          <a href="#contact">Contact us</a>
+          <a href="mailto:sharon.shazbags@googlemail.com">
+            Email Sharon
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © <span id="current-year">2026</span>
+          Fox Cubs Playscheme CIC. All rights reserved.
+        </p>
+
+        <a href="#home" class="back-to-top">
+          Back to top ↑
+        </a>
+      </div>
+
+    </div>
+  </footer>
 
 </body>
-
 </html>
