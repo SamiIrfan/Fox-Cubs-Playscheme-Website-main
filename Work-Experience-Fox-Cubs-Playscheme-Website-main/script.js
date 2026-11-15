@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
       observer.observe(element);
     });
   }
-
+ 
   // -----------------------------------------
   // Smooth section navigation
   // -----------------------------------------
